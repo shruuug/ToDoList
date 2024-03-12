@@ -1,0 +1,22 @@
+<RCC>
+    <qresource prefix="/ToDoList">
+        <file>images/add.png</file>
+        <file>images/calendar.png</file>
+        <file>images/High.png</file>
+        <file>images/Low.png</file>
+        <file>images/Mid.png</file>
+        <file>images/No.png</file>
+        <file>images/refresh.png</file>
+        <file>images/sort.png</file>
+        <file>images/check.png</file>
+        <file>images/left_arrow.png</file>
+        <file>images/right_arrow.png</file>
+        <file>images/down_arrow.png</file>
+        <file>images/up_arrow.png</file>
+        <file>images/cross.png</file>
+        <file>images/cross_hover.png</file>
+        <file>images/delete.png</file>
+        <file>images/delete_hover.png</file>
+        <file>images/complete.png</file>
+    </qresource>
+</RCC>

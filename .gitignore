@@ -1,0 +1,11 @@
+Debug/
+.vs
+x64
+*.user
+*.obj
+*.ipch
+*.sdf
+*.exe
+!*.sln
+!*.vxcproj
+!*.filters

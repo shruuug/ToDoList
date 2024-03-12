@@ -1,0 +1,1757 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>ToDoListClass</class>
+ <widget class="QWidget" name="ToDoListClass">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1221</width>
+    <height>721</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>ToDoList</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(255, 255, 255);
+font: 25 10pt &quot;微软雅黑 Light&quot;;</string>
+  </property>
+  <widget class="QStackedWidget" name="stackedWidget">
+   <property name="geometry">
+    <rect>
+     <x>220</x>
+     <y>70</y>
+     <width>650</width>
+     <height>650</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QTreeWidget::item {
+    height: 30px; /* 设置项的高度 */
+}
+/*
+QTreeWidget::item:hover {
+	border: 2px solid rgb(222, 222, 222);
+	background: rgb(222, 222, 222);
+}
+*/
+QStackedWidget {
+	border: none;
+}
+QWidget {
+	border: 1px solid rgb(222, 222, 222);
+	border-radius: 5px;
+}
+QStackedWidget {
+	border: none;
+}</string>
+   </property>
+   <property name="currentIndex">
+    <number>0</number>
+   </property>
+   <widget class="QWidget" name="pageHome">
+    <widget class="QTreeWidget" name="treeWidget">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>650</width>
+       <height>650</height>
+      </rect>
+     </property>
+     <property name="cursor" stdset="0">
+      <cursorShape>ArrowCursor</cursorShape>
+     </property>
+     <property name="layoutDirection">
+      <enum>Qt::LeftToRight</enum>
+     </property>
+     <property name="lineWidth">
+      <number>1</number>
+     </property>
+     <property name="midLineWidth">
+      <number>0</number>
+     </property>
+     <property name="uniformRowHeights">
+      <bool>false</bool>
+     </property>
+     <property name="animated">
+      <bool>false</bool>
+     </property>
+     <property name="headerHidden">
+      <bool>true</bool>
+     </property>
+     <property name="expandsOnDoubleClick">
+      <bool>true</bool>
+     </property>
+     <property name="columnCount">
+      <number>3</number>
+     </property>
+     <column>
+      <property name="text">
+       <string>1</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>2</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>3</string>
+      </property>
+     </column>
+     <item>
+      <property name="text">
+       <string>未安排</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="flags">
+       <set>ItemIsEnabled</set>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>未来七天</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="flags">
+       <set>ItemIsEnabled</set>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>以后</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="flags">
+       <set>ItemIsEnabled</set>
+      </property>
+     </item>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="pageToDo">
+    <widget class="QTreeWidget" name="treeWidget_2">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>650</width>
+       <height>650</height>
+      </rect>
+     </property>
+     <property name="headerHidden">
+      <bool>true</bool>
+     </property>
+     <property name="columnCount">
+      <number>3</number>
+     </property>
+     <column>
+      <property name="text">
+       <string>1</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>2</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>3</string>
+      </property>
+     </column>
+     <item>
+      <property name="text">
+       <string>我的待办</string>
+      </property>
+      <property name="flags">
+       <set>ItemIsEnabled</set>
+      </property>
+     </item>
+    </widget>
+   </widget>
+  </widget>
+  <widget class="QWidget" name="wdSide" native="true">
+   <property name="geometry">
+    <rect>
+     <x>870</x>
+     <y>-10</y>
+     <width>351</width>
+     <height>730</height>
+    </rect>
+   </property>
+   <property name="cursor">
+    <cursorShape>ArrowCursor</cursorShape>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton{
+	background: transparent;
+	border: none;
+	border-radius: 3px;
+}
+QPushButton:hover{
+	background: rgb(205, 205, 205);
+}
+QPushButton:pressed{
+	background: rgb(102, 102, 102);
+}
+QLineEdit{
+	border: none;
+	border-radius: 3px;
+}
+QLineEdit:hover{
+	background: rgb(222, 222, 222);
+}
+QLineEdit:focus{
+	background: rgb(222, 222, 222);
+}
+QCalendarWidget QToolButton#qt_calendar_yearbutton,
+QCalendarWidget QToolButton#qt_calendar_monthbutton { 
+	background-color: white; 
+	color: black;
+}
+QCalendarWidget QToolButton#qt_calendar_prevmonth {
+	border:none;
+	icon-size: 25px, 25px;
+    qproperty-icon: url(:/ToDoList/images/left_arrow.png);
+}
+QCalendarWidget QToolButton#qt_calendar_nextmonth {
+	border:none;
+	icon-size: 25px, 25px;
+    qproperty-icon: url(:/ToDoList/images/right_arrow.png);
+}
+QComboBox{
+	background: transparent;
+	border: 2px solid rgb(222, 222, 222);
+	border-radius: 3px;
+	padding: 1px 1px 1px 1px;
+}
+QComboBox:hover{
+	border: 2px solid rgb(4, 184, 182);
+}
+QComboBox::drop-down{
+	subcontrol-origin: padding;
+    subcontrol-position: right;
+	height: 16px;
+	width: 16px;
+	border:none;
+	border-image: url(:/ToDoList/images/down_arrow.png);
+}
+QComboBox::drop-down:on{
+	border-image: url(:/ToDoList/images/up_arrow.png);
+}
+QTimeEdit{
+	background: transparent;
+	border: 2px solid rgb(222, 222, 222);
+	border-radius: 3px;
+	padding: 1px 1px 1px 1px;
+}
+QTimeEdit:hover{
+	border: 2px solid rgb(4, 184, 182);
+}
+/*
+QCheckBox::indicator {
+	background: transparent;
+	border: 2px solid rgb(222, 222, 222);
+	border-radius: 3px;
+}
+QCheckBox::indicator:hover {
+	border: 2px solid rgb(4, 184, 182);
+}
+QCheckBox::indicator:checked {
+	border-image: url(:/ToDoList/images/complete.png);
+}
+*/</string>
+   </property>
+   <widget class="QComboBox" name="cmbPriority">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>100</y>
+      <width>100</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"/>
+    </property>
+    <item>
+     <property name="text">
+      <string>优先级无</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>优先级低</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>优先级中</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>优先级高</string>
+     </property>
+    </item>
+   </widget>
+   <widget class="QLineEdit" name="leTitle">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>50</y>
+      <width>300</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="maxLength">
+     <number>100</number>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="checkBox">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>55</y>
+      <width>16</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="leRemark">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>440</y>
+      <width>328</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="placeholderText">
+     <string>添加备注</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="leLocation">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>371</y>
+      <width>328</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="placeholderText">
+     <string>添加地点</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="leDescription">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>302</y>
+      <width>328</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="placeholderText">
+     <string>添加描述</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btnSetDeadLine">
+    <property name="geometry">
+     <rect>
+      <x>310</x>
+      <y>158</y>
+      <width>20</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background: transparent;
+image: url(:/ToDoList/images/calendar.png);
+image-position: center;</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QWidget" name="wdSideDeadLine" native="true">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>190</y>
+      <width>330</width>
+      <height>341</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"/>
+    </property>
+    <widget class="QCalendarWidget" name="cwSideDeadLine">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>328</width>
+       <height>231</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_5">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>263</y>
+       <width>75</width>
+       <height>25</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>设置重复</string>
+     </property>
+    </widget>
+    <widget class="QComboBox" name="comboBox_3">
+     <property name="geometry">
+      <rect>
+       <x>120</x>
+       <y>260</y>
+       <width>95</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <item>
+      <property name="text">
+       <string>不重复</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>每天重复</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>每周重复</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>每月重复</string>
+      </property>
+     </item>
+    </widget>
+    <widget class="QPushButton" name="pushButton_11">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>300</y>
+       <width>93</width>
+       <height>28</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>移除到期</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButton_12">
+     <property name="geometry">
+      <rect>
+       <x>210</x>
+       <y>300</y>
+       <width>93</width>
+       <height>28</height>
+      </rect>
+     </property>
+     <property name="cursor">
+      <cursorShape>PointingHandCursor</cursorShape>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color:white;
+background-color: rgb(4, 184, 182);</string>
+     </property>
+     <property name="text">
+      <string>确定</string>
+     </property>
+    </widget>
+    <zorder>label_5</zorder>
+    <zorder>comboBox_3</zorder>
+    <zorder>pushButton_11</zorder>
+    <zorder>pushButton_12</zorder>
+    <zorder>cwSideDeadLine</zorder>
+   </widget>
+   <widget class="QWidget" name="wdSideReminder" native="true">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>266</y>
+      <width>330</width>
+      <height>341</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"/>
+    </property>
+    <widget class="QCalendarWidget" name="cwSideReminder">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>328</width>
+       <height>231</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButton_13">
+     <property name="geometry">
+      <rect>
+       <x>210</x>
+       <y>300</y>
+       <width>93</width>
+       <height>28</height>
+      </rect>
+     </property>
+     <property name="cursor">
+      <cursorShape>PointingHandCursor</cursorShape>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color:white;
+background-color: rgb(4, 184, 182);</string>
+     </property>
+     <property name="text">
+      <string>确定</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_6">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>263</y>
+       <width>72</width>
+       <height>25</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>提醒时间</string>
+     </property>
+    </widget>
+    <widget class="QTimeEdit" name="timeEdit_2">
+     <property name="geometry">
+      <rect>
+       <x>110</x>
+       <y>260</y>
+       <width>118</width>
+       <height>30</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButton_14">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>300</y>
+       <width>93</width>
+       <height>28</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>移除提醒</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QPushButton" name="btnSetReminder">
+    <property name="geometry">
+     <rect>
+      <x>310</x>
+      <y>240</y>
+      <width>20</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background: transparent;
+image: url(:/ToDoList/images/calendar.png);
+image-position: center;</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="leReminder">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>235</y>
+      <width>301</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="readOnly">
+     <bool>true</bool>
+    </property>
+    <property name="placeholderText">
+     <string>设置提醒时间</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="leDeadLine">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>155</y>
+      <width>301</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="readOnly">
+     <bool>true</bool>
+    </property>
+    <property name="placeholderText">
+     <string>设置到期时间</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btnDelToDo">
+    <property name="geometry">
+     <rect>
+      <x>250</x>
+      <y>20</y>
+      <width>25</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="focusPolicy">
+     <enum>Qt::NoFocus</enum>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton{
+	background: transparent;
+	image: url(:/ToDoList/images/delete.png);
+	image-position: center;
+	border:none;
+	padding:2px;
+}
+QPushButton:hover{
+	image: url(:/ToDoList/images/delete_hover.png);
+}</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btnHideSide">
+    <property name="geometry">
+     <rect>
+      <x>300</x>
+      <y>20</y>
+      <width>25</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="focusPolicy">
+     <enum>Qt::NoFocus</enum>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton{
+	background: transparent;
+	image: url(:/ToDoList/images/cross.png);
+	image-position: center;
+	background-size: 15px 15px;
+	border:none;
+}
+QPushButton:hover{
+	image: url(:/ToDoList/images/cross_hover.png);
+}</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <zorder>cmbPriority</zorder>
+   <zorder>leTitle</zorder>
+   <zorder>checkBox</zorder>
+   <zorder>leRemark</zorder>
+   <zorder>leLocation</zorder>
+   <zorder>leDescription</zorder>
+   <zorder>btnSetDeadLine</zorder>
+   <zorder>btnSetReminder</zorder>
+   <zorder>leReminder</zorder>
+   <zorder>leDeadLine</zorder>
+   <zorder>wdSideReminder</zorder>
+   <zorder>wdSideDeadLine</zorder>
+   <zorder>btnDelToDo</zorder>
+   <zorder>btnHideSide</zorder>
+  </widget>
+  <widget class="QLabel" name="lblTitle">
+   <property name="geometry">
+    <rect>
+     <x>220</x>
+     <y>0</y>
+     <width>100</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 25 12pt &quot;微软雅黑 Light&quot;;</string>
+   </property>
+   <property name="text">
+    <string>我的首页</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btnMyToDoPage">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>100</y>
+     <width>191</width>
+     <height>60</height>
+    </rect>
+   </property>
+   <property name="cursor">
+    <cursorShape>PointingHandCursor</cursorShape>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton{
+	margin: 3px;
+	background: transparent;
+	border-radius: 3px;
+	border: none;
+}
+QPushButton:hover{
+	color: rgb(4, 184, 182);
+}
+QPushButton:pressed, QPushButton:checked{
+	background: rgb(222, 222, 222);
+	color: rgb(2, 150, 148);
+}</string>
+   </property>
+   <property name="text">
+    <string>我的待办</string>
+   </property>
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>false</bool>
+   </property>
+   <property name="autoExclusive">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="leCreateToDo">
+   <property name="geometry">
+    <rect>
+     <x>220</x>
+     <y>30</y>
+     <width>650</width>
+     <height>30</height>
+    </rect>
+   </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="focusPolicy">
+    <enum>Qt::ClickFocus</enum>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QLineEdit{
+	border: 2px solid rgb(222, 222, 222);
+	color: rgb(4, 184, 182);
+	border-radius: 3px;
+}
+QLineEdit:hover { 
+	border: 2px solid rgb(4, 184, 182);
+}
+QLineEdit:focus { 
+	border: 2px solid rgb(4, 184, 182);
+}</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="maxLength">
+    <number>100</number>
+   </property>
+   <property name="placeholderText">
+    <string>+ 点击新建待办</string>
+   </property>
+   <property name="clearButtonEnabled">
+    <bool>false</bool>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btnShowCalendar">
+   <property name="geometry">
+    <rect>
+     <x>835</x>
+     <y>32</y>
+     <width>25</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="cursor">
+    <cursorShape>PointingHandCursor</cursorShape>
+   </property>
+   <property name="focusPolicy">
+    <enum>Qt::NoFocus</enum>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background: transparent;
+image: url(:/ToDoList/images/calendar.png);
+image-position: center;
+border:none;</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btnRefresh">
+   <property name="geometry">
+    <rect>
+     <x>780</x>
+     <y>0</y>
+     <width>80</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="cursor">
+    <cursorShape>PointingHandCursor</cursorShape>
+   </property>
+   <property name="layoutDirection">
+    <enum>Qt::RightToLeft</enum>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton{
+	padding: 3px;
+	background: transparent;
+	border: none;
+	border-radius: 3px;
+	image: url(:/ToDoList/images/refresh.png);
+	image-position: left;
+	background-size: 15px 15px;
+}
+QPushButton:hover{
+	background: rgb(205, 205, 205);
+}
+QPushButton:pressed{
+	background: rgb(102, 102, 102);
+}</string>
+   </property>
+   <property name="text">
+    <string>     刷新</string>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>10</width>
+     <height>10</height>
+    </size>
+   </property>
+   <property name="checkable">
+    <bool>false</bool>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btnHomePage">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>30</y>
+     <width>191</width>
+     <height>60</height>
+    </rect>
+   </property>
+   <property name="cursor">
+    <cursorShape>PointingHandCursor</cursorShape>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton{
+	margin: 3px;
+	background: transparent;
+	border-radius: 3px;
+	border: none;
+}
+QPushButton:hover{
+	color: rgb(4, 184, 182);
+}
+QPushButton:pressed, QPushButton:checked{
+	background: rgb(222, 222, 222);
+	color: rgb(2, 150, 148);
+}</string>
+   </property>
+   <property name="text">
+    <string>我的首页</string>
+   </property>
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="autoExclusive">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QTabWidget" name="tabWidget">
+   <property name="geometry">
+    <rect>
+     <x>530</x>
+     <y>60</y>
+     <width>335</width>
+     <height>371</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QCalendarWidget QToolButton#qt_calendar_yearbutton,
+QCalendarWidget QToolButton#qt_calendar_monthbutton { 
+	background-color: white; 
+	color: black;
+}
+QCalendarWidget QToolButton#qt_calendar_prevmonth {
+	border:none;
+	icon-size: 25px, 25px;
+    qproperty-icon: url(:/ToDoList/images/left_arrow.png);
+}
+QCalendarWidget QToolButton#qt_calendar_nextmonth {
+	border:none;
+	icon-size: 25px, 25px;
+    qproperty-icon: url(:/ToDoList/images/right_arrow.png);
+}
+QPushButton{
+	background: transparent;
+	border: none;
+	border-radius: 3px;
+}
+QPushButton:hover{
+	background: rgb(205, 205, 205);
+}
+QPushButton:pressed{
+	background: rgb(102, 102, 102);
+}
+QComboBox{
+	background: transparent;
+	border: 2px solid rgb(222, 222, 222);
+	border-radius: 3px;
+	padding: 1px 1px 1px 1px;
+}
+QComboBox:hover{
+	border: 2px solid rgb(4, 184, 182);
+}
+QComboBox::drop-down{
+	subcontrol-origin: padding;
+    subcontrol-position: right;
+	height: 16px;
+	width: 16px;
+	border:none;
+	border-image: url(:/ToDoList/images/down_arrow.png);
+}
+QComboBox::drop-down:on{
+	border-image: url(:/ToDoList/images/up_arrow.png);
+}
+QTimeEdit{
+	background: transparent;
+	border: 2px solid rgb(222, 222, 222);
+	border-radius: 3px;
+	padding: 1px 1px 1px 1px;
+}
+QTimeEdit:hover{
+	border: 2px solid rgb(4, 184, 182);
+}</string>
+   </property>
+   <property name="currentIndex">
+    <number>0</number>
+   </property>
+   <widget class="QWidget" name="tab">
+    <attribute name="title">
+     <string>到期时间</string>
+    </attribute>
+    <widget class="QPushButton" name="pushButton_6">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>300</y>
+       <width>93</width>
+       <height>28</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>移除到期</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButton_3">
+     <property name="geometry">
+      <rect>
+       <x>210</x>
+       <y>300</y>
+       <width>93</width>
+       <height>28</height>
+      </rect>
+     </property>
+     <property name="cursor">
+      <cursorShape>PointingHandCursor</cursorShape>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color:white;
+background-color: rgb(4, 184, 182);</string>
+     </property>
+     <property name="text">
+      <string>确定</string>
+     </property>
+    </widget>
+    <widget class="QComboBox" name="comboBox">
+     <property name="geometry">
+      <rect>
+       <x>120</x>
+       <y>260</y>
+       <width>95</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true"/>
+     </property>
+     <item>
+      <property name="text">
+       <string>不重复</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>每天重复</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>每周重复</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>每月重复</string>
+      </property>
+     </item>
+    </widget>
+    <widget class="QCalendarWidget" name="cwDeadLine">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>328</width>
+       <height>231</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_2">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>263</y>
+       <width>75</width>
+       <height>25</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>设置重复</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="tab_2">
+    <attribute name="title">
+     <string>提醒时间</string>
+    </attribute>
+    <widget class="QCalendarWidget" name="cwReminder">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>328</width>
+       <height>231</height>
+      </rect>
+     </property>
+     <property name="focusPolicy">
+      <enum>Qt::ClickFocus</enum>
+     </property>
+     <property name="styleSheet">
+      <string notr="true"/>
+     </property>
+     <property name="minimumDate">
+      <date>
+       <year>1900</year>
+       <month>1</month>
+       <day>1</day>
+      </date>
+     </property>
+     <property name="maximumDate">
+      <date>
+       <year>2077</year>
+       <month>12</month>
+       <day>31</day>
+      </date>
+     </property>
+     <property name="gridVisible">
+      <bool>false</bool>
+     </property>
+     <property name="navigationBarVisible">
+      <bool>true</bool>
+     </property>
+     <property name="dateEditEnabled">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButton_4">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>300</y>
+       <width>93</width>
+       <height>28</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>移除提醒</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButton_5">
+     <property name="geometry">
+      <rect>
+       <x>210</x>
+       <y>300</y>
+       <width>93</width>
+       <height>28</height>
+      </rect>
+     </property>
+     <property name="cursor">
+      <cursorShape>PointingHandCursor</cursorShape>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color:white;
+background-color: rgb(4, 184, 182);</string>
+     </property>
+     <property name="text">
+      <string>确定</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>263</y>
+       <width>72</width>
+       <height>25</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>提醒时间</string>
+     </property>
+    </widget>
+    <widget class="QTimeEdit" name="timeEdit">
+     <property name="geometry">
+      <rect>
+       <x>110</x>
+       <y>260</y>
+       <width>118</width>
+       <height>30</height>
+      </rect>
+     </property>
+    </widget>
+   </widget>
+  </widget>
+  <widget class="QPushButton" name="btnSort">
+   <property name="geometry">
+    <rect>
+     <x>680</x>
+     <y>0</y>
+     <width>80</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="cursor">
+    <cursorShape>PointingHandCursor</cursorShape>
+   </property>
+   <property name="layoutDirection">
+    <enum>Qt::RightToLeft</enum>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton{
+	padding: 3px;
+	background: transparent;
+	border: none;
+	border-radius: 3px;
+	image: url(:/ToDoList/images/sort.png);
+	image-position: left;
+	background-size: 13px 13px;
+}
+QPushButton:hover{
+	background: rgb(205, 205, 205);
+}
+QPushButton:pressed{
+	background: rgb(102, 102, 102);
+}</string>
+   </property>
+   <property name="text">
+    <string>     排序</string>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>10</width>
+     <height>10</height>
+    </size>
+   </property>
+   <property name="checkable">
+    <bool>false</bool>
+   </property>
+  </widget>
+  <widget class="QWidget" name="wdGroups" native="true">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>180</y>
+     <width>220</width>
+     <height>540</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
+   <widget class="QWidget" name="verticalLayoutWidget_2">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>221</width>
+      <height>541</height>
+     </rect>
+    </property>
+    <layout class="QVBoxLayout" name="verticalLayout">
+     <property name="spacing">
+      <number>0</number>
+     </property>
+     <item>
+      <widget class="QPushButton" name="btnAddGroup">
+       <property name="enabled">
+        <bool>true</bool>
+       </property>
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="baseSize">
+        <size>
+         <width>0</width>
+         <height>0</height>
+        </size>
+       </property>
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton{
+	margin: 3px;
+	background: transparent;
+	border-radius: 3px;
+	border: none;
+    image: url(:/ToDoList/images/add.png);
+	image-position: left;
+}
+QPushButton:hover{
+	color: rgb(4, 184, 182);
+}
+QPushButton:pressed{
+	color: rgb(2, 150, 148);
+}
+</string>
+       </property>
+       <property name="text">
+        <string>添加分组</string>
+       </property>
+       <property name="autoDefault">
+        <bool>false</bool>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+  <widget class="QWidget" name="widget_3" native="true">
+   <property name="geometry">
+    <rect>
+     <x>610</x>
+     <y>28</y>
+     <width>151</width>
+     <height>81</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QWidget{
+	border: 1px solid rgb(222, 222, 222);
+	border-radius: 3px;
+}
+QToolButton{
+	background: transparent;
+	margin: 3px;
+	border: none;
+	border-radius: 3px;
+}
+QToolButton:hover{
+	background: rgb(205, 205, 205);
+}
+QToolButton:pressed{
+	background: rgb(102, 102, 102);
+}
+QToolButton:checked{
+	icon-size: 25px, 25px;
+	qproperty-icon: url(:/ToDoList/images/left_arrow.png);
+	image: url(:/ToDoList/images/check.png);
+	image-position: left;
+}</string>
+   </property>
+   <widget class="QWidget" name="layoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>151</width>
+      <height>81</height>
+     </rect>
+    </property>
+    <layout class="QVBoxLayout" name="verticalLayout_2">
+     <property name="spacing">
+      <number>0</number>
+     </property>
+     <item>
+      <widget class="QToolButton" name="btnByDate">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="text">
+        <string>     按到期时间</string>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <property name="checked">
+        <bool>true</bool>
+       </property>
+       <property name="autoExclusive">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QToolButton" name="btnByPriority">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="text">
+        <string>     按优先级</string>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <property name="autoExclusive">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources>
+  <include location="todolist.qrc"/>
+ </resources>
+ <connections>
+  <connection>
+   <sender>btnByDate</sender>
+   <signal>clicked()</signal>
+   <receiver>ToDoListClass</receiver>
+   <slot>onSort()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>680</x>
+     <y>45</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>579</x>
+     <y>7</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btnByPriority</sender>
+   <signal>clicked()</signal>
+   <receiver>ToDoListClass</receiver>
+   <slot>onSort()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>668</x>
+     <y>82</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>480</x>
+     <y>7</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>leCreateToDo</sender>
+   <signal>returnPressed()</signal>
+   <receiver>ToDoListClass</receiver>
+   <slot>onCreateToDoItem()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>273</x>
+     <y>52</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>204</x>
+     <y>8</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_14</sender>
+   <signal>clicked()</signal>
+   <receiver>ToDoListClass</receiver>
+   <slot>onClearReminder()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>947</x>
+     <y>571</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>1219</x>
+     <y>577</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_11</sender>
+   <signal>clicked()</signal>
+   <receiver>ToDoListClass</receiver>
+   <slot>onClearDeadLine()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>968</x>
+     <y>498</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>1219</x>
+     <y>496</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>leTitle</sender>
+   <signal>returnPressed()</signal>
+   <receiver>ToDoListClass</receiver>
+   <slot>onChangeTitle()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>951</x>
+     <y>26</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>1219</x>
+     <y>17</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>checkBox</sender>
+   <signal>stateChanged(int)</signal>
+   <receiver>ToDoListClass</receiver>
+   <slot>onChangeCheckState(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>884</x>
+     <y>45</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>866</x>
+     <y>11</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>cmbPriority</sender>
+   <signal>activated(int)</signal>
+   <receiver>ToDoListClass</receiver>
+   <slot>onChangePriority(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>957</x>
+     <y>61</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>1219</x>
+     <y>61</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_12</sender>
+   <signal>clicked()</signal>
+   <receiver>ToDoListClass</receiver>
+   <slot>onChangeDeadLine()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1145</x>
+     <y>493</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>1219</x>
+     <y>461</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_13</sender>
+   <signal>clicked()</signal>
+   <receiver>ToDoListClass</receiver>
+   <slot>onChangeReminderDate()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1133</x>
+     <y>563</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>1219</x>
+     <y>550</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>leLocation</sender>
+   <signal>returnPressed()</signal>
+   <receiver>ToDoListClass</receiver>
+   <slot>onChangeLocation()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>983</x>
+     <y>374</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>1219</x>
+     <y>380</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>leRemark</sender>
+   <signal>returnPressed()</signal>
+   <receiver>ToDoListClass</receiver>
+   <slot>onChangeRemark()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1057</x>
+     <y>446</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>1219</x>
+     <y>440</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>leDescription</sender>
+   <signal>returnPressed()</signal>
+   <receiver>ToDoListClass</receiver>
+   <slot>onChangeDescription()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1087</x>
+     <y>313</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>1219</x>
+     <y>309</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btnHomePage</sender>
+   <signal>clicked()</signal>
+   <receiver>ToDoListClass</receiver>
+   <slot>onGoHomePage()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>92</x>
+     <y>55</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>2</x>
+     <y>15</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btnMyToDoPage</sender>
+   <signal>clicked()</signal>
+   <receiver>ToDoListClass</receiver>
+   <slot>onGoToDoPage()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>39</x>
+     <y>115</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>2</x>
+     <y>88</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btnAddGroup</sender>
+   <signal>clicked()</signal>
+   <receiver>ToDoListClass</receiver>
+   <slot>onAddGroup()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>97</x>
+     <y>451</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>88</x>
+     <y>148</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btnDelToDo</sender>
+   <signal>clicked()</signal>
+   <receiver>ToDoListClass</receiver>
+   <slot>onDeleteToDoItem()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1133</x>
+     <y>27</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>1045</x>
+     <y>-1</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>onSort()</slot>
+  <slot>onGoHomePage()</slot>
+  <slot>onGoToDoPage()</slot>
+  <slot>onCreateToDoItem()</slot>
+  <slot>onAddGroup()</slot>
+  <slot>onClearDeadLine()</slot>
+  <slot>onClearReminder()</slot>
+  <slot>onChangeTitle()</slot>
+  <slot>onChangeCheckState(int)</slot>
+  <slot>onChangePriority(int)</slot>
+  <slot>onChangeDeadLine()</slot>
+  <slot>onChangeReminderDate()</slot>
+  <slot>onChangeLocation()</slot>
+  <slot>onChangeRemark()</slot>
+  <slot>onChangeDescription()</slot>
+  <slot>onDeleteToDoItem()</slot>
+ </slots>
+</ui>
